@@ -1,5 +1,6 @@
 {
   "name": "flat-loan",
+  "description": "A zero-interest lending platform",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

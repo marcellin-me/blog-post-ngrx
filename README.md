@@ -1,27 +1,57 @@
 # FlatLoan
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+Angular 6 is the latest version(as of today Jun 5th, 2018) of Angular framework.
 
-## Development server
+Ngrx is a collection of packages that makes it easy to manage state of Angular applications.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You can visit [Angular site]() and [Ngrx site]() for more information.
 
-## Code scaffolding
+## Description
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The focus of this walkthrough will be "the use of ngrx to store and distribute data among angular components".
 
-## Build
+We will be using "Flat Loan" as an example application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Flat Loan is a zero interest lending platform, where User A(lender or person with money), gives money(Amount) to User B(borrower or person with no money). Then in the future User B will give back some amount to User A in multiple installments until all Amount is given back.
 
-## Running unit tests
+## End Goal
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+By end of this walkthrough, you should be able to
+* TODO
+* TODO
+* TODO
+@TODO add a link to working app.
 
-## Running end-to-end tests
+## Step by Step
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* Domain model
+We need to store the `loan`, which is basically an aggreement that the `lender` has given some `amount` of money to the `borrower` for some `reasons`.
+```typescript
+interface ILoan {
+  lender: IUser;
+  borrower: IUser;
+  amount: number;
+  reason: string;
+}
+```
 
-## Further help
+We also need to store the `payback`, which will indicate to the `lender` that the `borrower` has paid some `amount` for a given `loan`.
+```typescript
+interface IPayback {
+  amount: Number;
+  loan: ILoan;
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+interface IUser {
+  name: string;
+  identification: string;
+  contact: string;
+  photo: ILoan;
+}
+```
+
+* 
+
+## Result
